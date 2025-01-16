@@ -18,7 +18,7 @@ form.addEventListener('submit', async (e) => {
     if (!longUrl) return;
 
     try {
-    const response = await fetch('https://lnkd.dev:5000/shorten', {
+    const response = await fetch('https://lnkd.dev:5000/api/shorten', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: longUrl }),
@@ -47,15 +47,15 @@ setInterval(() => {
 async function fetchStats() {
     try {
         // Total Links
-        const totalLinksResponse = await fetch('https://lnkd.dev:5000/stats/total_links');
+        const totalLinksResponse = await fetch('https://lnkd.dev:5000/api/stats/total_links');
         const totalLinksData = await totalLinksResponse.json();
         totalLinks.textContent = totalLinksData.total_links;
     
         // Most Clicked Shortlink
-        const mostClickedResponse = await fetch('https://lnkd.dev:5000/stats/most_clicked');
+        const mostClickedResponse = await fetch('https://lnkd.dev:5000/api/stats/most_clicked');
         const mostClickedData = await mostClickedResponse.json();
         if (mostClickedData.short_url) {
-            totalClicks.innerHTML = `<a href="https://lnkd.dev:5000/${mostClickedData.short_url}" target="_blank">${mostClickedData.short_url}</a> (${mostClickedData.click_count} clicks)`;
+            totalClicks.innerHTML = `<a href="https://lnkd.dev:5000/api/${mostClickedData.short_url}" target="_blank">${mostClickedData.short_url}</a> (${mostClickedData.click_count} clicks)`;
         } else {
         totalClicks.textContent = "No data available";
         }
