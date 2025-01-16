@@ -6,33 +6,27 @@
   <title>LNKD - Shorten. Ping. Link.</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/styling.css">
-  
 </head>
 <body>
   <div class="container">
     <h1 class="title">LNKD</h1>
     <p class="subtitle">Shorten your links. Ping them. Track performance.</p>
 
-    <form class="form">
-      <input type="url" class="input" placeholder="Paste your long URL here..." required>
+    <form class="form" id="shortenForm">
+      <input type="url" class="input" id="urlInput" placeholder="Paste your long URL here..." required>
       <button class="button" type="submit">Shorten</button>
     </form>
 
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">🔗</div>
-        <h3>Shorten Links</h3>
-        <p>Turn long URLs into short and shareable links in seconds.</p>
+    <div class="result" id="result"></div>
+
+    <div class="stats">
+      <div class="card">
+        <h3>Total: Links Shortened</h3>
+        <p id="totalLinks">Fetching...</p>
       </div>
-      <div class="feature">
-        <div class="feature-icon">📊</div>
-        <h3>Track Analytics</h3>
-        <p>Monitor clicks and engagement with real-time analytics.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">📡</div>
-        <h3>Ping Status</h3>
-        <p>Check the availability of your links anytime, anywhere.</p>
+      <div class="card">
+        <h3>Most Clicked</h3>
+        <p id="totalClicks">Fetching...</p>
       </div>
     </div>
 
@@ -40,6 +34,7 @@
       © 2025 LNKD. All rights reserved.
     </footer>
   </div>
+
+  <script src="./js/main.js"></script>
 </body>
-<script src="./js/main.js"></script>
 </html>

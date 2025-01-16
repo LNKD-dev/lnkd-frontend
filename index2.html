@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LNKD - Shorten. Ping. Link.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styling.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">LNKD</h1>
+    <p class="subtitle">Shorten your links. Ping them. Track performance.</p>
+
+    <form class="form" id="shortenForm">
+      <input type="url" class="input" id="urlInput" placeholder="Paste your long URL here..." required>
+      <button class="button" type="submit">Shorten</button>
+    </form>
+
+    <div class="result" id="result"></div>
+    <p class="copy-message" id="copyMessage" style="display: none;">Copied to clipboard!</p>
+
+    <footer class="footer">
+      © 2025 LNKD. All rights reserved.
+    </footer>
+  </div>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
